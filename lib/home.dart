@@ -13,7 +13,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   var _imagemApp = const AssetImage("images/padrao.png");
   var _imagemUser = const AssetImage("images/padrao.png");
-  var _mensagem = "Escolha uma opção abaixo";
+  var _imagemLula = const AssetImage("images/lula.jpg");
+  var _imagemBonoro = const AssetImage("images/bonoro.png");
+
+  var _mensagem = "Escolha uma opção camarada";
   var _userWin = 0;
   var _appWin = 0;
   var _empate = 0;
@@ -22,7 +25,6 @@ class _HomeState extends State<Home> {
     var opcoes = ["pedra", "papel", "tesoura"];
     var numero = Random().nextInt(3);
     var escolhaApp = opcoes[numero];
-  
 
     switch (escolhaApp) {
       case "pedra":
@@ -63,6 +65,7 @@ class _HomeState extends State<Home> {
         (escolhaUsuario == "papel" && escolhaApp == "pedra")) {
       setState(() {
         _mensagem = "Parabéns!!! Você ganhou :)";
+        _imagemUser = _imagemBonoro;
         _userWin += 1;
       });
     } else if (escolhaUsuario == escolhaApp) {
@@ -73,6 +76,7 @@ class _HomeState extends State<Home> {
     } else {
       setState(() {
         _mensagem = "Você perdeu :(";
+        _imagemApp = _imagemLula;
         _appWin += 1;
       });
     }
@@ -90,7 +94,7 @@ class _HomeState extends State<Home> {
           const Padding(
             padding: EdgeInsets.only(top: 32, bottom: 16),
             child: Text(
-              "Pedra, papel, tesoura, pedra",
+              "Pedra, papel, tesoura",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -100,8 +104,8 @@ class _HomeState extends State<Home> {
               Expanded(
                 child: Image(image: _imagemUser),
               ),
-              const Text('x',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const Text('VS',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
               Expanded(
                 child: Image(image: _imagemApp),
               ),
