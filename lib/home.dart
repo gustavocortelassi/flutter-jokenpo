@@ -11,12 +11,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var _imagemApp = const AssetImage("images/padrao.png");
-  var _imagemUser = const AssetImage("images/padrao.png");
-  var _imagemLula = const AssetImage("images/lula.jpg");
-  var _imagemBonoro = const AssetImage("images/bonoro.png");
+  var _imagemApp = const AssetImage("assets/images/padrao.png");
+  var _imagemUser = const AssetImage("assets/images/padrao.png");
+  var _imagemLula = const AssetImage("assets/images/lula.jpg");
+  var _imagemBonoro = const AssetImage("assets/images/bonoro.png");
 
-  var _mensagem = "Escolha uma opção camarada";
+  var _mensagem = "Escolha UMA opção camarada";
   var _userWin = 0;
   var _appWin = 0;
   var _empate = 0;
@@ -29,34 +29,34 @@ class _HomeState extends State<Home> {
     switch (escolhaApp) {
       case "pedra":
         setState(() {
-          _imagemApp = const AssetImage("images/pedra.png");
+          _imagemApp = const AssetImage("assets/images/pedra.png");
         });
         break;
       case "papel":
         setState(() {
-          _imagemApp = const AssetImage("images/papel.png");
+          _imagemApp = const AssetImage("assets/images/papel.png");
         });
         break;
       case "tesoura":
         setState(() {
-          _imagemApp = const AssetImage("images/tesoura.png");
+          _imagemApp = const AssetImage("assets/images/tesoura.png");
         });
     }
 
     switch (escolhaUsuario) {
       case "pedra":
         setState(() {
-          _imagemUser = const AssetImage("images/pedra.png");
+          _imagemUser = const AssetImage("assets/images/pedra.png");
         });
         break;
       case "papel":
         setState(() {
-          _imagemUser = const AssetImage("images/papel.png");
+          _imagemUser = const AssetImage("assets/images/papel.png");
         });
         break;
       case "tesoura":
         setState(() {
-          _imagemUser = const AssetImage("images/tesoura.png");
+          _imagemUser = const AssetImage("assets/images/tesoura.png");
         });
     }
 
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
           const Padding(
             padding: EdgeInsets.only(top: 32, bottom: 16),
             child: Text(
-              "Pedra, papel, tesoura",
+              "JoKenPo Presidencial",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -124,15 +124,15 @@ class _HomeState extends State<Home> {
             children: [
               GestureDetector(
                 onTap: () => _opcaoSelecionada('pedra'),
-                child: Image.asset("images/pedra.png", height: 80),
+                child: Image.asset("assets/images/pedra.png", height: 80),
               ),
               GestureDetector(
                 onTap: () => _opcaoSelecionada('papel'),
-                child: Image.asset("images/papel.png", height: 80),
+                child: Image.asset("assets/images/papel.png", height: 80),
               ),
               GestureDetector(
                 onTap: () => _opcaoSelecionada('tesoura'),
-                child: Image.asset("images/tesoura.png", height: 80),
+                child: Image.asset("assets/images/tesoura.png", height: 80),
               ),
             ],
           ),
